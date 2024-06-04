@@ -8,12 +8,23 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <div class="header-title">
-      <h1 class="title">Etch-a-sketch</h1>
-    </div>
-    <div class="btn-container">
-      <button class="clear">Clear</button>
-      <button class="erase">Eraser</button>
+    <div class="header-btn-container">
+      <div class="header-title">
+        <h1 class="title">Etch-a-sketch</h1>
+      </div>
+      <div class="btn-container">
+        <button class="clear">Clear</button>
+        <button class="erase">Eraser</button>
+        <button class="draw">Draw</button>
+        <input
+          type="range"
+          min="16"
+          max="100"
+          value="16"
+          oninput="rangeValue.innerText = this.value"
+          class="slider" />
+        <p class="range-value">16</p>
+      </div>
     </div>
     <div class="container">
       <div class="grid-container"></div>

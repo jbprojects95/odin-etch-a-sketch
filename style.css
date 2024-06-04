@@ -8,22 +8,35 @@ body {
   min-height: 100vh;
   height: 100vh;
   display: flex;
+}
+
+.header-btn-container {
+  display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  gap: 30px;
+  margin-left: 20px;
 }
 
 .header-title {
   display: flex;
-  justify-content: center;
-  /* padding: 18px; */
+  justify-content: space-around;
+  align-items: flex-start;
+
+  padding: 18px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  margin-left: 90px;
 }
 
 .grid-container {
   display: flex;
   flex-wrap: wrap;
-  width: 450px;
-  height: 450px;
+  width: 500px;
+  height: 500px;
+  margin: 30px;
 }
 
 .cells {
@@ -45,6 +58,7 @@ body {
 
 .btn-container {
   display: flex;
+
   justify-content: center;
   align-items: center;
   padding: 12px;
@@ -52,7 +66,8 @@ body {
 }
 
 .clear,
-.erase {
+.erase,
+.draw {
   padding: 7px;
   font-size: 16px;
 }
