@@ -71,3 +71,21 @@ body {
   padding: 7px;
   font-size: 16px;
 }
+
+.colour-container {
+  display: flex;
+  margin-left: 12px;
+  align-items: center;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.bg-clear {
+  background-color: white;
+}

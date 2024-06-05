@@ -16,14 +16,34 @@
         <button class="clear">Clear</button>
         <button class="erase">Eraser</button>
         <button class="draw">Draw</button>
-        <input
-          type="range"
-          min="16"
-          max="100"
-          value="16"
-          oninput="rangeValue.innerText = this.value"
-          class="slider" />
+        <input type="range" min="16" max="100" value="16" class="slider" />
         <p class="range-value">16</p>
+      </div>
+      <div class="colour-container">
+        <fieldset>
+          <legend>Select a colour:</legend>
+          <div>
+            <input
+              type="radio"
+              id="black"
+              name="colour"
+              value="black"
+              checked />
+            <label for="black">Black</label>
+          </div>
+          <div>
+            <input type="radio" id="red" name="colour" value="red" />
+            <label for="red">Red</label>
+          </div>
+          <div>
+            <input type="radio" id="blue" name="colour" value="blue" />
+            <label for="blue">Blue</label>
+          </div>
+          <div>
+            <input type="radio" id="random" name="colour" value="random" />
+            <label for="random">Random</label>
+          </div>
+        </fieldset>
       </div>
     </div>
     <div class="container">
