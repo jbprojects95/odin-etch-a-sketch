@@ -1,18 +1,3 @@
-// function makeDivs(numDivs) {
-//   const container = document.querySelector(".grid-container");
-
-//   for (let d = 0; d < numDivs * numDivs; d++) {
-//     let cells = document.createElement("div");
-//     const boxSize = 450 / numDivs;
-//     cells.classList.add("cells");
-//     cells.style.width = boxSize + "px";
-//     cells.style.height = boxSize + "px";
-//     container.appendChild(cells);
-//   }
-// }
-
-// makeDivs(16);
-
 const makeDivs = (numValue) => {
   const container = document.querySelector(".grid-container");
   for (let d = 0; d < numValue * numValue; d++) {
@@ -29,11 +14,19 @@ const makeDivs = (numValue) => {
     hover.forEach((div) => {
       div.addEventListener("mouseover", function () {
         if (document.getElementById("black").checked) {
-          div.classList.add("colour-change");
+          div.classList.add("bg-black");
+          div.classList.remove("bg-red", "bg-blue");
+          div.style.backgroundColor = "";
         } else if (document.getElementById("red").checked) {
           div.classList.add("bg-red");
+          div.classList.remove("bg-black", "bg-blue");
+          div.style.backgroundColor = "";
         } else if (document.getElementById("blue").checked) {
           div.classList.add("bg-blue");
+          div.classList.remove("bg-black", "bg-red");
+          div.style.backgroundColor = "";
+        } else if (document.getElementById("random").checked) {
+          div.style.backgroundColor = randomColour();
         }
       });
     });
@@ -42,6 +35,14 @@ const makeDivs = (numValue) => {
 };
 
 makeDivs(16);
+
+const randomColour = () => {
+  let x = Math.floor(Math.random() * 256);
+  let y = Math.floor(Math.random() * 256);
+  let z = Math.floor(Math.random() * 256);
+  let bgColour = `rgb(${x}, ${y}, ${z})`;
+  return bgColour;
+};
 
 const slider = document.querySelector(".slider");
 const sliderValue = document.querySelector(".range-value");
@@ -60,7 +61,8 @@ clearBtn.addEventListener("click", () => {
   const gridDivs = document.querySelectorAll(".cells");
   gridDivs.forEach((div) => {
     div.classList.add("bg-clear");
-    div.classList.remove("bg-red", "bg-blue", "colour-change");
+    div.classList.remove("bg-red", "bg-blue", "bg-black");
+    div.style.backgroundColor = "";
     div.addEventListener("mouseover", () => {
       div.classList.remove("bg-clear");
       div.classList.add(
@@ -86,12 +88,9 @@ drawBtn = document.querySelector(".draw");
 drawBtn.addEventListener("click", () => {
   const gridDivs = document.querySelectorAll(".cells");
   gridDivs.forEach((div) => {
-    div.classList.remove("bg-red", "bg-blue", "colour-change", "bg-clear");
     div.addEventListener("mouseover", () => {
       div.classList.remove("bg-clear");
-      div.classList.add(
-        document.getElementsByTagName('input[type="radio"]').checked
-      );
+      hoverEffect();
     });
   });
 });

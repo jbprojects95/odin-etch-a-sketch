@@ -52,10 +52,6 @@ body {
   width: 100%;
 }
 
-.colour-change {
-  background-color: black;
-}
-
 .btn-container {
   display: flex;
 
@@ -88,4 +84,11 @@ body {
 
 .bg-clear {
   background-color: white;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.bg-random {
 }
